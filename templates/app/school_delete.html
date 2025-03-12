@@ -1,0 +1,23 @@
+{% extends 'app/dummy.html' %}
+{% block title %}
+
+    <title>Home</title>
+    {% endblock %}
+
+{% block body_block %}
+<center>
+    <h1>Are U sure To delete {{schoolobj.scname}}</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="submit" value="Yes-Sure-Delete" class="btn btn-danger">
+    </form>
+
+<a href="{% url 'SchoolList' %}" class="btn btn-dark">Take Me Back to List</a>
+<a href="{% url 'School_Detail' pk=schoolobj.pk %}" class="btn btn-dark">Take Me Back to Detail</a>
+
+
+
+</center>
+{% endblock %}
